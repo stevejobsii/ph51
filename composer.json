@@ -30,7 +30,7 @@
         "spatie/laravel-backup": "^3.8",
         "VentureCraft/revisionable": "^1.27",
         "socialiteproviders/weixin": "^2.1",
-        "smartisan/follow": "^1.0",
+        //"smartisan/follow": "^1.0",
         "guzzlehttp/guzzle": "^6.2",
         "jrean/laravel-user-verification": "^2.2",
         "naux/sendcloud": "^1.1",
