@@ -1,11 +1,5 @@
 {
     "name": "laravel/myapp",
-    "repositories": {
-    "packagist": {
-        "type": "composer",
-        "url": "https://packagist.phpcomposer.com"
-    }
-    },
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
