@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7cdd49340accdf67506d39a681372002",
-    "content-hash": "8a21fd5db5cf73b22a931f95254ce759",
+    "hash": "a82a0db63b1731d15e4d7c8f82cd397f",
+    "content-hash": "a876263ca0d1209ec50994d052f6e962",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1630,6 +1630,50 @@
             "time": "2016-08-10 12:23:27"
         },
         {
+            "name": "laravel/laravel",
+            "version": "v5.1.33",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/laravel.git",
+                "reference": "70f8bb6e08f0232c306826282b995bb5670a0efa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/laravel/zipball/70f8bb6e08f0232c306826282b995bb5670a0efa",
+                "reference": "70f8bb6e08f0232c306826282b995bb5670a0efa",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "~1.4",
+                "mockery/mockery": "0.9.*",
+                "phpspec/phpspec": "~2.1",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "classmap": [
+                    "database"
+                ],
+                "psr-4": {
+                    "App\\": "app/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The Laravel Framework.",
+            "keywords": [
+                "framework",
+                "laravel"
+            ],
+            "time": "2016-04-05 14:06:24"
+        },
+        {
             "name": "laravel/socialite",
             "version": "v2.0.18",
             "source": {
@@ -3148,6 +3192,163 @@
             "time": "2016-04-24 02:00:22"
         },
         {
+            "name": "smartisan/follow",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mohd-isa/follow.git",
+                "reference": "ea6e27d294262e5817fa8d23aa5724a92a96921f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mohd-isa/follow/zipball/ea6e27d294262e5817fa8d23aa5724a92a96921f",
+                "reference": "ea6e27d294262e5817fa8d23aa5724a92a96921f",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/laravel": ">= 5.1",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "laravel/laravel": "dev-develop",
+                "phpunit/phpunit": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Smartisan\\Follow\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammed Isa",
+                    "email": "mohd.itcs@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 User Based System",
+            "time": "2016-05-06 20:42:21"
+        },
+        {
+            "name": "socialiteproviders/manager",
+            "version": "v2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Manager.git",
+                "reference": "388851f850418941ea6e220d0d82fc20cca2c2e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/388851f850418941ea6e220d0d82fc20cca2c2e7",
+                "reference": "388851f850418941ea6e220d0d82fc20cca2c2e7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/socialite": "~2.0",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Manager\\": "src/",
+                    "SocialiteProviders\\Manager\\Test\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Wendt",
+                    "email": "andy@awendt.com"
+                }
+            ],
+            "description": "Easily add new or override built-in providers in Laravel Socialite.",
+            "time": "2016-06-22 18:09:37"
+        },
+        {
+            "name": "socialiteproviders/qq",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/QQ.git",
+                "reference": "9df3a584e5d0480dbeb030a9027e984dc1fd5859"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/QQ/zipball/9df3a584e5d0480dbeb030a9027e984dc1fd5859",
+                "reference": "9df3a584e5d0480dbeb030a9027e984dc1fd5859",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Qq\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "heui",
+                    "email": "runphp@qq.com"
+                }
+            ],
+            "description": "Qq.com OAuth2 Provider for Laravel Socialite",
+            "time": "2016-06-07 12:46:37"
+        },
+        {
+            "name": "socialiteproviders/weibo",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weibo.git",
+                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Weibo/zipball/10ff7fd36edacfcc1513440e01b863e88c9ff05e",
+                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Weibo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "weibo.com OAuth2 Provider for Laravel Socialite",
+            "time": "2016-04-01 07:00:54"
+        },
+        {
             "name": "socialiteproviders/weixin",
             "version": "v2.1.1",
             "source": {
@@ -4385,7 +4586,7 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "packages/rss/",
+                "url": "packages/rss",
                 "reference": null,
                 "shasum": null
             },

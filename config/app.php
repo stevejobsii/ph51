@@ -176,7 +176,7 @@ return [
         Phphub\Sitemap\SitemapServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,
-        //Smartisan\Follow\FollowServiceProvider::class,
+        Smartisan\Follow\FollowServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
         Naux\Mail\SendCloudServiceProvider::class,
 
