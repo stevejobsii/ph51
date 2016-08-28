@@ -3147,7 +3147,6 @@
             ],
             "time": "2016-04-24 02:00:22"
         },
-        
         {
             "name": "socialiteproviders/weixin",
             "version": "v2.1.1",
