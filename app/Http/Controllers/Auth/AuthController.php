@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
+use Input;
 use Users;
 use Flash;
 use App\Http\Requests\StoreUserRequest;
