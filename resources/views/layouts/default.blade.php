@@ -14,7 +14,7 @@
 		<meta name="keywords" content="最酷的社区" />
 		<meta name="description" content="最酷的社区" />
         <meta name="_token" content="{{ csrf_token() }}">
-
+        <meta property="qc:admins" content="44573310677477476375" />
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
 
         <link rel="shortcut icon" href="{{ cdn('favicon.ico') }}"/>
