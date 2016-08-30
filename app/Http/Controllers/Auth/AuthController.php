@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use Session;
 use Auth;
 use Input;
-use User;
 use Flash;
 use App\Http\Requests\StoreUserRequest;
 use Phphub\Listeners\UserCreatorListener;
