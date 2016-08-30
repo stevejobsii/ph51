@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Session;
 use Auth;
 use Input;
-use Users;
+use User;
 use Flash;
 use App\Http\Requests\StoreUserRequest;
 use Phphub\Listeners\UserCreatorListener;
@@ -145,7 +145,7 @@ class AuthController extends Controller implements UserCreatorListener
     public function callback($provider) {
         if (Input::has('code')) {
             $oauthUser = \Socialite::with($provider)->user();
-            if (is_null($user = Users::where('name', '=', $oauthUser->nickname)->first())){
+            if (is_null($user = User::where('name', '=', $oauthUser->nickname)->first())){
             $user = Users::create([
                 'name' => $oauthUser->nickname,
                 'email'=> $oauthUser->email,
