@@ -59,7 +59,7 @@ Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 Route::get('/oauth', 'Auth\AuthController@getOauth');
 
 Route::get('/auth/oauth', 'Auth\AuthController@oauth')->name('auth.oauth');
-Route::get('/auth/callback', 'Auth\AuthController@callback')->name('auth.callback');
+Route::get('/auth/{provider}/callback', 'Auth\AuthController@callback')->name('auth.callback');
 Route::get('/verification/{token}', 'Auth\AuthController@getVerification')->name('verification');
 
 # ------------------ Categories ------------------------
@@ -121,12 +121,6 @@ Route::group(['middleware' => ['auth', 'admin_auth']], function () {
 });
 
 # ------------------ Password reset stuff Auth2------------------------
-
-Route::get('auth/qq','Auth\Auth2Controller@qq');
-Route::get('auth/weixin','Auth\Auth2Controller@weixin');
-Route::get('auth/weibo','Auth\Auth2Controller@weibo');
-Route::get('auth/{provider}/callback', 'Auth\Auth2Controller@callback');
-
 Route::get('auth/login-required', 'Auth\Auth2Controller@loginRequired');
 Route::get('auth/admin-required', 'Auth\Auth2Controller@adminRequired');
 Route::get('auth/user-banned',  'Auth\Auth2Controller@userBanned');
