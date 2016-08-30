@@ -145,7 +145,7 @@ class AuthController extends Controller implements UserCreatorListener
         if (Input::has('code')) {
             $oauthUser = \Socialite::with($provider)->user();
             if (is_null($user = User::where('name', '=', $oauthUser->nickname)->first())){
-            $user = Users::create([
+            $user = User::create([
                 'name' => $oauthUser->nickname,
                 'email'=> $oauthUser->email,
                 'avatar'=>$oauthUser->avatar,
