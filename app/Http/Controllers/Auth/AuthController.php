@@ -164,7 +164,7 @@ class AuthController extends Controller implements UserCreatorListener
                 //登录的用户不能找到，注册
                 return $this->userNotFound($provider, $oauthUser);
             }
-        ｝
+        }
     }
 
 
