@@ -54,14 +54,14 @@ trait SocialiteHelper
         }
     }
 
-    public function bindSocialiteUser($oauthUser, $driver)
+    public function bindSocialiteUser($oauthUser, $provider)
     {
         $currentUser = Auth::user();
 
-        if ($driver == 'github') {
-            $currentUser->github_id = $oauthUser->id;
-            $currentUser->github_url = $oauthUser->user['url'];
-        } elseif ($driver == 'wechat') {
+        if ($provider == 'qq') {
+            $currentUser->qq_id = $oauthUser->id;
+           //$currentUser->github_url = $oauthUser->user['url'];
+        } elseif ($provider == 'wechat') {
             $currentUser->wechat_openid = $oauthUser->id;
             $currentUser->wechat_unionid = $oauthUser->user['unionid'];
         }

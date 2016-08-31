@@ -70,6 +70,7 @@ class AuthController extends Controller implements UserCreatorListener
     /**
      * Shows a user what their new account will look like.
      */
+    //由session引入的注册
     public function create()
     {
         if (! Session::has('oauthData')) {
@@ -127,33 +128,59 @@ class AuthController extends Controller implements UserCreatorListener
     }
 
     public function oauth(Request $request) { 
-        $driver = $request->query('driver');      
+        $driver = $request->query('driver'); 
+        
+        if (Auth::check() && Auth::user()->register_source == $driver) {
+            return redirect('/');
+        }
+
         if ($driver == 'qq') {
         return \Socialite::with('qq')->redirect();}
     }
 
-    public function weixin() {
-        return \Socialite::with('weixin')->redirect();
-    }
-
-    public function weibo() {
-        return \Socialite::with('weibo')->redirect();
-    }
-
     //callback
     public function callback($provider) {
+        //要是有回code参数
         if (Input::has('code')) {
             $oauthUser = \Socialite::with($provider)->user();
-            if (is_null($user = User::where('name', '=', $oauthUser->nickname)->first())){
-            $user = User::create([
-                'name' => $oauthUser->nickname,
-                'email'=> $oauthUser->email,
-                'avatar'=>$oauthUser->avatar,
-            ]);
-            }
-            Auth::login($user,true);
+            //判断登录的用户能否找到
+            $user = User::getByDriver($provider, $oauthUser->id);
+
+            
+            if (Auth::check()) {
+            //要是正在用户状态，判断能否绑定
+                if ($user && $user->id != Auth::id()) {
+                    Flash::error(lang('Sorry, this socialite account has been registed.', ['driver' => lang($provider)]));
+                } else {//绑定
+                    $this->bindSocialiteUser($oauthUser, $provider);
+                    Flash::success(lang('Bind Successfully!', ['driver' => lang($provider)]));
+                }
+                return redirect(route('users.edit_social_binding', Auth::id()));
+            } else {
+            //要是非登录状态
+                if ($user) {//登录的用户能找到，登录
+                    return $this->loginUser($user);
+                }
+                //登录的用户不能找到，注册
+                return $this->userNotFound($provider, $oauthUser);
         }
-        return redirect('');
+    }
+
+
+    //绑定
+    public function bindSocialiteUser($oauthUser, $provider)
+    {
+        $currentUser = Auth::user();
+
+        if ($provider == 'qq') {
+            $currentUser->qq_id = $oauthUser->id;
+           //$currentUser->github_url = $oauthUser->user['url'];
+        } elseif ($provider == 'wechat') {
+            $currentUser->wechat_openid = $oauthUser->id;
+            $currentUser->wechat_unionid = $oauthUser->user['unionid'];
+        }
+
+        $currentUser->save();
     }
 
     /**
@@ -161,7 +188,7 @@ class AuthController extends Controller implements UserCreatorListener
      * GithubAuthenticatorListener Delegate
      * ----------------------------------------
      */
-    public function userNotFound($driver, $registerUserData)
+    public function userNotFound($provider, $registerUserData)
     {
         // if ($driver == 'github') {
         //     $oauthData['image_url'] = $registerUserData->user['avatar_url'];
@@ -183,10 +210,10 @@ class AuthController extends Controller implements UserCreatorListener
             $oauthData['wechat_unionid'] = $registerUserData->user['unionid'];
         }
 
-        $oauthData['driver'] = $driver;
+        $oauthData['driver'] = $provider;
         Session::put('oauthData', $oauthData);
 
-        return redirect(route('signup'));
+        return redirect(route('signup'));//跳到注册（create）
     }
 
     // 数据库有用户信息, 登录用户

@@ -7,7 +7,7 @@ trait UserSocialiteHelper
     public static function getByDriver($driver, $id)
     {
         $functionMap = [
-            'github' => 'getByGithubId',
+            'qq' => 'getByQQId',
             'wechat' => 'getByWechatId'
         ];
         $function = $functionMap[$driver];
@@ -18,9 +18,13 @@ trait UserSocialiteHelper
         return self::$function($id);
     }
 
-    public static function getByGithubId($id)
+    // public static function getByGithubId($id)
+    // {
+    //     return User::where('github_id', '=', $id)->first();
+    // }
+    public static function getByQQId($id)
     {
-        return User::where('github_id', '=', $id)->first();
+        return User::where('qq_id', '=', $id)->first();
     }
 
     public static function getByWechatId($id)

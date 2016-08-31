@@ -19,10 +19,11 @@ class UserPresenter extends Presenter
             return cdn('uploads/avatars/'.$this->avatar) . $postfix;
         }
 
-        $github_id = $this->github_id;
-        $domainNumber = rand(0, 3);
+        //github
+        // $github_id = $this->github_id;
+        // $domainNumber = rand(0, 3);
 
-        return "https://avatars{$domainNumber}.githubusercontent.com/u/{$github_id}?v=2&s={$size}";
+        // return "https://avatars{$domainNumber}.githubusercontent.com/u/{$github_id}?v=2&s={$size}";
     }
 
     public function loginQR($size = 80)
