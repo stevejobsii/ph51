@@ -22,7 +22,6 @@ class UserPresenter extends Presenter
         //github
         // $github_id = $this->github_id;
         // $domainNumber = rand(0, 3);
-
         // return "https://avatars{$domainNumber}.githubusercontent.com/u/{$github_id}?v=2&s={$size}";
     }
 
