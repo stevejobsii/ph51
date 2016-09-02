@@ -4,13 +4,13 @@ use App\Models\User;
 
 trait UserSocialiteHelper
 {
-    public static function getByDriver($driver, $id)
+    public static function getByDriver($provider, $id)
     {
         $functionMap = [
             'qq' => 'getByQQId',
             'wechat' => 'getByWechatId'
         ];
-        $function = $functionMap[$driver];
+        $function = $functionMap[$provider];
         if (!$function) {
             return null;
         }
