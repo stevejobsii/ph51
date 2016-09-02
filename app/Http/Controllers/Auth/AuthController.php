@@ -144,7 +144,7 @@ class AuthController extends Controller implements UserCreatorListener
         if (Input::has('code')) {
             $oauthUser = \Socialite::with($provider)->user();
             //判断登录的用户能否找到
-            return json_encode($oauthUser);
+            //return json_encode($oauthUser);
             $user = User::getByDriver($provider, $oauthUser->id);
 
             if (Auth::check()) {
