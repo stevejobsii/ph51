@@ -127,6 +127,7 @@ class AuthController extends Controller implements UserCreatorListener
         return redirect(route('users.edit', Auth::user()->id));
     }
 
+    //接入oauth   
     public function oauth(Request $request) { 
         $driver = $request->query('driver'); 
         
@@ -148,7 +149,7 @@ class AuthController extends Controller implements UserCreatorListener
             $user = User::getByDriver($provider, $oauthUser->id);
 
             if (Auth::check()) {
-            //要是正在用户状态，判断能否绑定
+            //要是正在用户状态，判断能否绑定,未测试
                 if ($user && $user->id != Auth::id()) {
                     Flash::error(lang('Sorry, this socialite account has been registed.', ['driver' => lang($provider)]));
                 } else {//绑定

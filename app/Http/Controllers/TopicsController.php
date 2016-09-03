@@ -105,7 +105,7 @@ class TopicsController extends Controller implements CreatorListener
         return view('topics.create_edit', compact('topic', 'categories', 'category'));
     }
 
-    //route:
+    //话题附加，ps
     public function append($id, Request $request)
     {
         $topic = Topic::findOrFail($id);

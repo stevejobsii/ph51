@@ -34,7 +34,7 @@ Route::patch('/users/{id}', 'UsersController@update')->name('users.update');
 Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
 Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users.edit_avatar');
 Route::patch('/users/{id}/update_avatar', 'UsersController@updateAvatar')->name('users.update_avatar');
-
+//通知中心
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
     Route::get('/notifications/count', 'NotificationsController@count')->name('notifications.count');
@@ -53,9 +53,13 @@ Route::get('/login-required', 'Auth\AuthController@loginRequired')->name('login-
 Route::get('/admin-required', 'Auth\AuthController@adminRequired')->name('admin-required');
 //显示小窗口对不起，您的账号已被禁用！
 Route::get('/user-banned', 'Auth\AuthController@userBanned')->name('user-banned');
+//创造用户
 Route::get('/signup', 'Auth\AuthController@create')->name('signup');
+//创造用户post
 Route::post('/signup', 'Auth\AuthController@store')->name('signup');
+//登出
 Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
+//第三方登录包括qq、weixin等
 Route::get('/oauth', 'Auth\AuthController@getOauth');
 
 Route::get('/auth/oauth', 'Auth\AuthController@oauth')->name('auth.oauth');
@@ -76,13 +80,22 @@ Route::post('/replies', 'RepliesController@store')->name('replies.store')->middl
 Route::delete('replies/delete/{id}', 'RepliesController@destroy')->name('replies.destroy')->middleware('auth');
 
 # ------------------ Topic ------------------------
+//所有话题汇总
 Route::get('/topics', 'TopicsController@index')->name('topics.index');
-Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
-Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
+Route::get('/topics/create', 'TopicsController@create')->name('topics.create');
+//->middleware('verified_email');创造话题不需要邮寄认证
+Route::post('/topics', 'TopicsController@store')->name('topics.store');
+//->middleware('verified_email');创造话题不需要邮寄认证
+
+//展示每一个话题{id}
 Route::get('/topics/{id}', 'TopicsController@show')->name('topics.show');
+//修改每一个话题{id}
 Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
+//patch补丁每一个话题{id}
 Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
+//删除每一个话题{id}
 Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
+//话题附加，ps
 Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
 
 # ------------------ Votes ------------------------
