@@ -135,7 +135,7 @@ Route::group(['middleware' => ['auth', 'admin_auth']], function () {
 
 # ------------------ Password reset stuff Auth2------------------------
 Route::controllers([
-            'auth'=>'Auth\Auth2Controller',
+            'auth'=>'Auth\AuthController',
             'password'=>'Auth\PasswordController'
         ]);
 
