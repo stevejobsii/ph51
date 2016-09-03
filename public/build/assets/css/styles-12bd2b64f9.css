@@ -13276,5 +13276,8 @@ a:hover, a:focus {
   color: #00b5ad;
   background-color: transparent;
   border: 1px solid #00b5ad; }
-
+  
+h1,h2,h3,h4,h5{
+  color: blue;
+}
 /*# sourceMappingURL=styles.css.map */
