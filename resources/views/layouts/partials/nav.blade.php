@@ -2,16 +2,17 @@
   <div class="container">
     <div class="navbar-header hidden-xs">
 
-      <a href="/" class="navbar-brand">PHPHub</a>
+      <a href="/" class="navbar-brand">XXX社区</a>
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
-        <li class="{{ Request::is('categories/6') ? ' active' : '' }}"><a href="{{ route('categories.show', [6, 'filter' => 'recent']) }}">教程</a></li>
-        <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
-        <li class="{{ Request::is('categories/4') ? ' active' : '' }}"><a href="{{ route('categories.show', 4) }}">问答</a></li>
-        <li class="{{ (Request::is('sites') ? ' active' : '') }}"><a href="{{ route('sites.index') }}">{{ lang('Sites') }}</a></li>
-        <li class="{{ (Request::is('topics/2541') ? ' active' : '') }}"><a href="https://phphub.org/topics/2541">Wiki</a></li>
+        <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">整个社区</a></li>
+        <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', [1, 'filter' => 'recent']) }}">活动</a></li>
+        <li class="{{ Request::is('categories/2') ? ' active' : '' }}"><a href="{{ route('categories.show', 2) }}">工作<</a></li>
+        <li class="{{ Request::is('categories/3') ? ' active' : '' }}"><a href="{{ route('categories.show', 3) }}">问答</a></li>
+        <li class="{{ Request::is('categories/4') ? ' active' : '' }}"><a href="{{ route('categories.show', 4) }}">趣味</a></li>
+        <li class="{{ Request::is('categories/5') ? ' active' : '' }}"><a href="{{ route('categories.show', 5) }}">便宜货</a></li>
+ <!-- <li class="{{ (Request::is('sites') ? ' active' : '') }}"><a href="{{ route('sites.index') }}">{{ lang('Sites') }}</a></li><li class="{{ (Request::is('topics/2541') ? ' active' : '') }}"><a href="https://xxx.org/topics/2541">Wiki</a></li> -->
       </ul>
 
       <div class="navbar-right">

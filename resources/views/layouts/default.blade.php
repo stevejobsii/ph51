@@ -48,7 +48,6 @@
 			@include('layouts.partials.nav')
 
 			<div class="container main-container">
-			<h1>sdfs</h1>
 
 				@include('flash::message')
                 
