@@ -84,7 +84,7 @@ class TopicsController extends Controller implements CreatorListener
         //用户看过＋1
         $topic->increment('view_count', 1);
         //赞助sidebar
-        $banners  = Banner::allByPosition();
+        return $banners  = Banner::allByPosition();
 
         return view('topics.show', compact(
                             'topic', 'replies', 'categoryTopics',

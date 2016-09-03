@@ -40,7 +40,7 @@ class PagesController extends Controller
     public function search(Request $request)
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
-        return redirect()->away('https://www.bing.com/search?q=site:ph51.local ' . $query, 301);
+        return redirect()->away('https://www.bing.com/search?q=site:goodgoto.com ' . $query, 301);
     }
 
     /**

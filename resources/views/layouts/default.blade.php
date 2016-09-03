@@ -48,11 +48,6 @@
 			@include('layouts.partials.nav')
 
 			<div class="container main-container">
-<<<<<<< HEAD
-=======
-
-			
->>>>>>> parent of 022087f... test
 
 				@include('flash::message')
                 
