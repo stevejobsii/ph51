@@ -84,8 +84,8 @@ class TopicsController extends Controller implements CreatorListener
         //用户看过＋1
         $topic->increment('view_count', 1);
         //赞助sidebar
-        return $banners  = Banner::allByPosition();
-
+        $banners  = Banner::allByPosition();
+        //{"sidebar-sponsor":[{"id":1,"position":"sidebar-sponsor","order":0,"image_url":"https:\/\/goodgoto.com\/uploads\/banners\/NmLlOXaIebjlrJtxHt3c.jpg","title":"asdfasdf","link":"www.baidu.com","target":"_blank","description":"fdsaklsadfjsdljfas","deleted_at":null,"created_at":"2016-09-03 20:32:51","updated_at":"2016-09-03 20:32:51"}],"footer-sponsor":[{"id":2,"position":"footer-sponsor","order":0,"image_url":"https:\/\/goodgoto.com\/uploads\/banners\/5TUu1XONFaa65INX3ekm.jpg","title":"asdfasdf","link":"www.baidu.com","target":"_blank","description":"fdsaklsadfjsdljfas","deleted_at":null,"created_at":"2016-09-03 20:33:21","updated_at":"2016-09-03 20:33:21"}]}
         return view('topics.show', compact(
                             'topic', 'replies', 'categoryTopics',
                             'category', 'banners', 'randomExcellentTopics',
