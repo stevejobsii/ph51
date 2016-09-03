@@ -141,7 +141,7 @@ class AuthController extends Controller implements UserCreatorListener
 
     //callback
     public function callback($provider) {
-        return 'sff';
+        //return 'sff';
         //要是有回code参数
         if (Input::has('code')) {
             $oauthUser = \Socialite::with($provider)->user();
