@@ -29,7 +29,9 @@ class TopicCreator
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
         $data['excerpt'] = Topic::makeExcerpt($data['body']);
 
-        $data['source'] = get_platform();
+        //跨平台选择平台app or web
+        //$data['source'] = get_platform();
+        $data['source'] = 'web';
 
         $topic = Topic::create($data);
         if (! $topic) {

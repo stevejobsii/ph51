@@ -91,9 +91,10 @@ function output_msb(\Illuminate\Support\MessageBag $messageBag){
     return implode(", ", $messageBag->all());
 }
 
-function get_platform(){
-    return Request::header('X-Client-Platform');
-}
+//跨平台选择平台app or web
+// function get_platform(){
+//     return Request::header('X-Client-Platform');
+// }
 
 function is_request_from_api()
 {
