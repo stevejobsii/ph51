@@ -286,7 +286,8 @@ class UsersController extends Controller
 
         return view('users.edit_social_binding', compact('user'));
     }
-
+ 
+    //https://goodgoto.com/email-verification-required
     public function emailVerificationRequired()
     {
         if (\Auth::user()->verified) {
