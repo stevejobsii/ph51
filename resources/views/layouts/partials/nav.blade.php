@@ -8,7 +8,7 @@
       <ul class="nav navbar-nav">
         <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">整个社区</a></li>
         <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', [1, 'filter' => 'recent']) }}">活动</a></li>
-        <li class="{{ Request::is('categories/2') ? ' active' : '' }}"><a href="{{ route('categories.show', 2) }}">工作<</a></li>
+        <li class="{{ Request::is('categories/2') ? ' active' : '' }}"><a href="{{ route('categories.show', 2) }}">工作</a></li>
         <li class="{{ Request::is('categories/3') ? ' active' : '' }}"><a href="{{ route('categories.show', 3) }}">问答</a></li>
         <li class="{{ Request::is('categories/4') ? ' active' : '' }}"><a href="{{ route('categories.show', 4) }}">趣味</a></li>
         <li class="{{ Request::is('categories/5') ? ' active' : '' }}"><a href="{{ route('categories.show', 5) }}">便宜货</a></li>
