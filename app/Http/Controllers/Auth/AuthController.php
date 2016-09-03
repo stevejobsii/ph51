@@ -145,7 +145,7 @@ class AuthController extends Controller implements UserCreatorListener
             $oauthUser = \Socialite::with($provider)->user();
             //判断登录的用户能否找到
             //return json_encode($oauthUser);
-            $user = User::getByDriver($provider, $oauthUser->nickname);
+            $user = User::getByDriver($provider, $oauthUser->id);
 
             if (Auth::check()) {
             //要是正在用户状态，判断能否绑定
@@ -203,7 +203,7 @@ class AuthController extends Controller implements UserCreatorListener
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['name'] = $registerUserData->nickname;
             $oauthData['email'] = $registerUserData->email;
-            $oauthData['qq_id'] = $registerUserData->nickname;
+            $oauthData['qq_id'] = $registerUserData->id;
         }elseif ($provider == 'wechat') {
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['wechat_openid'] = $registerUserData->id;
