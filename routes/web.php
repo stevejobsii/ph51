@@ -76,7 +76,8 @@ Route::get('/sites', 'SitesController@index')->name('sites.index');
 
 # ------------------ Replies ------------------------
 
-Route::post('/replies', 'RepliesController@store')->name('replies.store')->middleware('verified_email');
+Route::post('/replies', 'RepliesController@store')->name('replies.store');
+//->middleware('verified_email');;创造话题不需要邮寄认证
 Route::delete('replies/delete/{id}', 'RepliesController@destroy')->name('replies.destroy')->middleware('auth');
 
 # ------------------ Topic ------------------------
