@@ -22,6 +22,7 @@ class UserCreator
 
     public function create(UserCreatorListener $observer, $data)
     {
+        return $data;
         $user = User::create($data);
         if (! $user) {
             return $observer->userValidationError($user->getErrors());

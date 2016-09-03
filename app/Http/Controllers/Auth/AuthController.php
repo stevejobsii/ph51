@@ -203,7 +203,7 @@ class AuthController extends Controller implements UserCreatorListener
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['name'] = $registerUserData->nickname;
             $oauthData['email'] = $registerUserData->email;
-            $oauthData['qq_id'] = $registerUserData->id;
+            $oauthData['qq_id'] = $registerUserData->nickname;
         }elseif ($provider == 'wechat') {
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['wechat_openid'] = $registerUserData->id;
