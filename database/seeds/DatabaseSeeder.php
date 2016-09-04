@@ -12,11 +12,11 @@ class DatabaseSeeder extends Seeder
         'TopicsTableSeeder',
         'RepliesTableSeeder',
         //'BannersTableSeeder',
-        'FollowersTableSeeder',
+        //'FollowersTableSeeder',
         'ActiveUsersTableSeeder',
         'HotTopicsTableSeeder',
-        'SitesTableSeeder',
-        'OauthClientsTableSeeder',
+        //'SitesTableSeeder',
+        //'OauthClientsTableSeeder',
     ];
 
     public function run()

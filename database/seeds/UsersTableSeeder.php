@@ -8,14 +8,15 @@ class UsersTableSeeder extends Seeder
 {
     public function run()
     {
-        $users = factory(User::class)->times(49)->make()->each(function ($user, $i) {
+        $users = factory(User::class)->times(5)->make()->each(function ($user, $i) {
             if ($i == 0) {
                 $user->name = 'admin';
                 $user->email = 'admin@estgroupe.com';
                 //$user->github_name = 'admin';
             }
 
-            $user->github_id = $i + 1;
+            //$user->github_id = $i + 1;
+            $user->qq_id = $i + 1;
         });
 
         User::insert($users->toArray());

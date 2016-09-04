@@ -15,15 +15,17 @@ class TopicsTableSeeder extends Seeder
 
         $faker = app(Faker\Generator::class);
 
-        $topics = factory(Topic::class)->times(rand(100, 200))->make()->each(function ($topic) use ($faker, $users, $categories) {
+        //->times(rand(100, 200))->make()
+        $topics = factory(Topic::class)->times(5)->make()->each(function ($topic) use ($faker, $users, $categories) {
             $topic->user_id      = $faker->randomElement($users);
             $topic->category_id  = $faker->randomElement($categories);
             $topic->is_excellent = rand(0, 1) ? 'yes' : 'no';
         });
         Topic::insert($topics->toArray());
 
-        $admin_topics = factory(Topic::class)->times(rand(1, 100))->make()->each(function ($topic) use ($faker, $categories) {
-            $topic->user_id     = 1;
+        //->times(rand(1, 100))->make()
+        $admin_topics = factory(Topic::class)->times(5)->make()->each(function ($topic) use ($faker, $categories) {
+            $topic->user_id     = 8;
             $topic->category_id = $faker->randomElement($categories);
         });
         Topic::insert($admin_topics->toArray());
