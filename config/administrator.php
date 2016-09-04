@@ -21,7 +21,7 @@ return array(
      *
      * @type string
      */
-    'title' => 'PHPHub 管理后台',
+    'title' => 'XXX管理后台',
 
     /*
      * The path to your model config directory
