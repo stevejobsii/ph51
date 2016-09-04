@@ -71,6 +71,9 @@
 @endif
 
   <div class="panel panel-default corner-radius">
+    <div class="panel-heading text-center">
+        <h3 class="panel-title">广告栏目1</h3>
+    </div>
     <div class="panel-body text-center sidebar-sponsor-box">
         @if(isset($banners['sidebar-sponsor']))
             @foreach($banners['sidebar-sponsor'] as $banner)
@@ -79,7 +82,7 @@
                 </a>
             @endforeach
         @endif
-  </div>
+    </div>
   </div>
 
   @if (isset($links) && count($links))
