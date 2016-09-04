@@ -6,7 +6,7 @@
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">所有社区动态</a></li>
+        <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">ALL</a></li>
         <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', [1, 'filter' => 'recent']) }}">社团活动</a></li>
         <li class="{{ Request::is('categories/2') ? ' active' : '' }}"><a href="{{ route('categories.show', 2) }}">交易</a></li>
         <li class="{{ Request::is('categories/3') ? ' active' : '' }}"><a href="{{ route('categories.show', 3) }}">问答</a></li>
