@@ -31,7 +31,7 @@
               <option value="" disabled {{ count($category) != 0 ?: 'selected' }}>{{ lang('Pick a category') }}</option>
 
               @foreach ($categories as $value)
-                  @if(Auth::user()->can('compose_announcement'))
+                  @if($value->id != 7 || Auth::user()->can('compose_announcement'))
                       <option value="{{ $value->id }}" {{ (count($category) != 0 && $value->id == $category->id) ? 'selected' : '' }} >{{ $value->name }}</option>
                   @endif
               @endforeach
