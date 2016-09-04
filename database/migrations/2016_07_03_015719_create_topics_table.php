@@ -16,7 +16,7 @@ class CreateTopicsTable extends Migration
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->index();
-            $table->string('source')->index(); // 来源跟踪：iOS，Android
+            $table->string('source')->index(); // 来源跟踪：iOS，Android  默认web
             $table->text('body');
             $table->integer('user_id')->unsigned()->default(0)->index();
             $table->integer('category_id')->unsigned()->default(0)->index();
@@ -25,8 +25,8 @@ class CreateTopicsTable extends Migration
             $table->integer('vote_count')->default(0)->index();
             $table->integer('last_reply_user_id')->unsigned()->default(0)->index();
             $table->integer('order')->default(0)->index();
-            $table->enum('is_excellent', ['yes',  'no'])->default('no')->index();
-            $table->enum('is_blocked', ['yes',  'no'])->default('no')->index();
+            $table->enum('is_excellent', ['yes',  'no'])->default('no')->index(); //推荐
+            $table->enum('is_blocked', ['yes',  'no'])->default('no')->index(); 
             $table->text('body_original')->nullable();
             $table->text('excerpt')->nullable();
             $table->enum('is_tagged', ['yes',  'no'])->default('no')->index();

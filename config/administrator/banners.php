@@ -3,9 +3,9 @@
 use App\Models\Banner;
 
 return [
-    'title'   => 'Banner',
-    'heading' => 'Banner',
-    'single'  => 'Banner',
+    'title'   => '广告栏目',
+    'heading' => '广告栏目',
+    'single'  => '广告栏目',
     'model'   => Banner::class,
 
     'query_filter' => function ($query) {

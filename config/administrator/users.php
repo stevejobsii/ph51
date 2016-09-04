@@ -31,9 +31,9 @@ return [
             'title'    => '真实姓名',
             'sortable' => false,
         ],
-        'github_name' => [
-            'title' => 'GitHub 用户名'
-        ],
+        // 'github_name' => [
+        //     'title' => 'GitHub 用户名'
+        // ],
         'topic_count' => [
             'title' => '话题数量'
         ],
@@ -80,12 +80,13 @@ return [
         'email' => [
             'title' => '邮箱',
         ],
-        'github_id' => [
-            'title' => 'GitHub ID'
-        ],
-        'github_url' => [
-            'title' => 'GitHub URL'
-        ],
+        //编辑
+        // 'github_id' => [
+        //     'title' => 'GitHub ID'
+        // ],
+        // 'github_url' => [
+        //     'title' => 'GitHub URL'
+        // ],
         'wechat_openid' => [
             'title' => '微信 openid',
         ],
@@ -122,9 +123,9 @@ return [
             'title' => '认证信息',
             'type' => 'textarea',
         ],
-        'github_name' => [
-            'title' => 'GitHub 用户名'
-        ],
+        // 'github_name' => [
+        //     'title' => 'GitHub 用户名'
+        // ],
         'real_name' => [
             'title' => '真实姓名'
         ],
@@ -149,9 +150,10 @@ return [
         'name' => [
             'title' => '姓名',
         ],
-        'github_name' => [
-            'title' => 'GitHub 用户名'
-        ],
+        //筛选
+        // 'github_name' => [
+        //     'title' => 'GitHub 用户名'
+        // ],
         'real_name' => [
             'title' => '真实姓名'
         ],
