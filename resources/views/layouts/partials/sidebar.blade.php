@@ -114,11 +114,11 @@
 
 <div class="panel panel-default corner-radius">
   <div class="panel-heading text-center">
-    <h3 class="panel-title">{{ lang('App Download') }}</h3>
+    <h3 class="panel-title">广告栏目2</h3>
   </div>
   <div class="panel-body text-center" style="padding: 7px;">
-    <a href="https://phphub.org/topics/1531" target="_blank" rel="nofollow" title="">
-      <img src="https://dn-phphub.qbox.me/uploads/images/201512/08/1/cziZFHqkm8.png" style="width:240px;">
+    <a href="" target="_blank" rel="nofollow" title="">
+      <img src="/hlwelcome.jpg" style="width:240px;">
     </a>
   </div>
 </div>

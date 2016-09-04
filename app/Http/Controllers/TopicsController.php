@@ -33,11 +33,9 @@ class TopicsController extends Controller implements CreatorListener
     {
         //根据topics?filter=筛选查询主题内容
         $topics = $topic->getTopicsWithFilter($request->get('filter'), 40);
-        //赞助sidebar
-        $links  = Link::allFromCache();
         //ruby社区等//return $links;图片链接及超链接
-        
-        //友情社区sidebar
+        $links  = Link::allFromCache();
+        //赞助广告sidebar
         $banners = Banner::allByPosition();
         //活跃用户sidebar
         $active_users = ActiveUser::fetchAll();

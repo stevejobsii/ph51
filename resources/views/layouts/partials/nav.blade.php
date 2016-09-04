@@ -10,7 +10,7 @@
         <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', [1, 'filter' => 'recent']) }}">社团活动</a></li>
         <li class="{{ Request::is('categories/2') ? ' active' : '' }}"><a href="{{ route('categories.show', 2) }}">交易</a></li>
         <li class="{{ Request::is('categories/3') ? ' active' : '' }}"><a href="{{ route('categories.show', 3) }}">问答</a></li>
-        <li class="{{ Request::is('categories/4') ? ' active' : '' }}"><a href="{{ route('categories.show', 4) }}">恶搞</a></li>
+        <li class="{{ Request::is('categories/4') ? ' active' : '' }}"><a href="{{ route('categories.show', 4) }}">幽默</a></li>
         <li class="{{ Request::is('categories/5') ? ' active' : '' }}"><a href="{{ route('categories.show', 5) }}">生活黄页</a></li>
         <li class="{{ Request::is('categories/5') ? ' active' : '' }}"><a href="{{ route('categories.show', 6) }}">联谊</a></li>
  <!-- <li class="{{ (Request::is('sites') ? ' active' : '') }}"><a href="{{ route('sites.index') }}">{{ lang('Sites') }}</a></li><li class="{{ (Request::is('topics/2541') ? ' active' : '') }}"><a href="https://xxx.org/topics/2541">Wiki</a></li> -->
