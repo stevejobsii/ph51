@@ -39,7 +39,7 @@ class TopicsController extends Controller implements CreatorListener
         $banners = Banner::allByPosition();
         //活跃用户sidebar
         $active_users = ActiveUser::fetchAll();
-        return $active_users;
+        // return $active_users;
         //热话题sidebar
         $hot_topics = HotTopic::fetchAll();
 
