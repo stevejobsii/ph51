@@ -7,11 +7,11 @@ class DatabaseSeeder extends Seeder
 {
     protected $seeders = [
         'UsersTableSeeder',
-        'LinksTableSeeder',
-        'CategoriesTableSeeder',
+        //'LinksTableSeeder',
+        //'CategoriesTableSeeder',
         'TopicsTableSeeder',
         'RepliesTableSeeder',
-        'BannersTableSeeder',
+        //'BannersTableSeeder',
         'FollowersTableSeeder',
         'ActiveUsersTableSeeder',
         'HotTopicsTableSeeder',

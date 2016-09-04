@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
             if ($i == 0) {
                 $user->name = 'admin';
                 $user->email = 'admin@estgroupe.com';
-                $user->github_name = 'admin';
+                //$user->github_name = 'admin';
             }
 
             $user->github_id = $i + 1;
