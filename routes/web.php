@@ -6,7 +6,6 @@ Route::get('/search', 'PagesController@search')->name('search');//用BING来搜�
 Route::get('/feed', 'PagesController@feed')->name('feed');//网站动态
 Route::get('/sitemap', 'PagesController@sitemap');//网站动态
 Route::get('/sitemap.xml', 'PagesController@sitemap');//网站动态xml
-
 Route::get('/hall_of_fames', 'PagesController@hallOfFames')->name('hall_of_fames');//社区名人堂
 
 # ------------------ User stuff ------------------------
