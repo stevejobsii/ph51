@@ -23,7 +23,7 @@ class PagesController extends Controller
         $topics = $topic->getTopicsWithFilter('excellent');
         //赞助
         $banners = Banner::allByPosition();
-        
+        //等30分钟生效
         return view('pages.home', compact('topics', 'banners'));
     }
 

@@ -38,7 +38,7 @@ class Banner extends Model
 
     public static function allByPosition()
     {
-        $data = Cache::remember('phphub_banner', 60, function(){
+        $data = Cache::remember('phphub_banner', 30, function(){
             $return = [];
             $data   = Banner::orderBy('position', 'DESC')
                             ->orderBy('order', 'ASC')
