@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Banner;
 use App\Models\ActiveUser;
 use App\Models\HotTopic;
+use App\Models\User;
 use Phphub\Handler\Exception\ImageUploadException;
 use Phphub\Markdown\Markdown;
 use Illuminate\Http\Request;
@@ -38,8 +39,10 @@ class TopicsController extends Controller implements CreatorListener
         //赞助广告sidebar
         $banners = Banner::allByPosition();
         //活跃用户sidebar
-        $active_users = ActiveUser::fetchAll();
-        // return $active_users;
+
+        //$active_users = ActiveUser::fetchAll();
+        $active_users = User::hallOfFamesUsers();
+        
         //热话题sidebar
         $hot_topics = HotTopic::fetchAll();
 

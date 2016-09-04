@@ -67,7 +67,7 @@ class User extends Model implements AuthenticatableContract,
     }
     public static function hallOfFamesUsers()
     {
-        $data = Cache::remember('phphub_hall_of_fames', 60, function(){
+        $data = Cache::remember('phphub_hall_of_fames', 30, function(){
             return User::isRole('HallOfFame')->orderBy('last_actived_at', 'desc')->get();
         });
         return $data;
