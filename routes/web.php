@@ -131,8 +131,6 @@ Route::post('/upload_image', 'TopicsController@uploadImage')->name('upload_image
 
 // Health Checking
 Route::get('mailtest', function () {
-use Illuminate\Support\Facades\Mail;
-
 Mail::send('mails.welcome', ['key' => 'value'], function($message)
 {
     $message->to('401789679@qq.com', 'Mora')->subject('Welcome!');
