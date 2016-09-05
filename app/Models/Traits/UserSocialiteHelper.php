@@ -8,7 +8,7 @@ trait UserSocialiteHelper
     {
         $functionMap = [
             'qq' => 'getByQQId',
-            'wechat' => 'getByWechatId'
+            'weixin' => 'getByWechatId'
         ];
         $function = $functionMap[$provider];
         if (!$function) {
