@@ -75,11 +75,14 @@
               </li>
 
           @else
-              <a href="{{ URL::route('login-required') }}" class="btn btn-success login-btn weichat-login-btn">
+              <a href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}" class="btn btn-success login-btn weichat-login-btn">
                 <i class="fa fa-weixin"></i>
-                {{ lang('Login') }}
+                微信登录
               </a>
-
+              <a href="{{ URL::route('auth.oauth', ['driver' => 'qq']) }}" class="btn btn-info login-btn">
+                <i class="fa fa-qq"></i>
+                QQ登录
+              </a>
               <!-- github 登录<a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-info login-btn">
                 <i class="fa fa-github-alt"></i>
                 {{ lang('Login') }}
