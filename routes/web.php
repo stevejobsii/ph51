@@ -9,21 +9,29 @@ Route::get('/sitemap.xml', 'PagesController@sitemap');//网站动态xml
 Route::get('/hall_of_fames', 'PagesController@hallOfFames')->name('hall_of_fames');//社区名人堂
 
 # ------------------ User stuff ------------------------
-
+//https://goodgoto.com/users/8/replies     Ta 发表的回复（3）
 Route::get('/users/{id}/replies', 'UsersController@replies')->name('users.replies');
+//https://goodgoto.com/users/8/topics      Ta 发布的话题（6）
 Route::get('/users/{id}/topics', 'UsersController@topics')->name('users.topics');
+//https://goodgoto.com/users/8/votes       Ta 赞过的话题
 Route::get('/users/{id}/votes', 'UsersController@votes')->name('users.votes');
+//https://goodgoto.com/users/8/following   Ta 关注的用户
 Route::get('/users/{id}/following', 'UsersController@following')->name('users.following');
+//https://goodgoto.com/users/8/followers   Ta 的关注者
 Route::get('/users/{id}/followers', 'UsersController@followers')->name('users.followers');
-Route::get('/users/{id}/refresh_cache', 'UsersController@refreshCache')->name('users.refresh_cache');
+//github stuff
+//Route::get('/users/{id}/refresh_cache', 'UsersController@refreshCache')->name('users.refresh_cache');
 Route::get('/users/{id}/access_tokens', 'UsersController@accessTokens')->name('users.access_tokens');
 Route::get('/access_token/{token}/revoke', 'UsersController@revokeAccessToken')->name('users.access_tokens.revoke');
 Route::get('/users/regenerate_login_token', 'UsersController@regenerateLoginToken')->name('users.regenerate_login_token');
+//post关注谁谁谁
 Route::post('/users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
+//新回复时接收邮件？
 Route::get('/users/{id}/edit_email_notify', 'UsersController@editEmailNotify')->name('users.edit_email_notify');
 Route::post('/users/{id}/update_email_notify', 'UsersController@updateEmailNotify')->name('users.update_email_notify');
+//账号绑定设置
 Route::get('/users/{id}/edit_social_binding', 'UsersController@editSocialBinding')->name('users.edit_social_binding');
-//会员列表，新加入会员
+//会员列表(新加入会员)
 Route::get('/users', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@create')->name('users.create');
 Route::post('/users', 'UsersController@store')->name('users.store');
@@ -121,14 +129,9 @@ Route::group(['before' => 'manage_users'], function () {
 
 Route::post('/upload_image', 'TopicsController@uploadImage')->name('upload_image')->middleware('auth');
 
-// Health Checking
-Route::get('heartbeat', function () {
-    return Category::first();
-});
-
 //github大众不需要 Route::get('/github-api-proxy/users/{username}', 'UsersController@githubApiProxy')->name('users.github-api-proxy');
 // Route::get('/github-card', 'UsersController@githubCard')->name('users.github-card');
-
+//Laravel Log Viewer
 Route::group(['middleware' => ['auth', 'admin_auth']], function () {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
