@@ -86,14 +86,14 @@ return array(
      * @type closure
      */
     'permission' => function () {
-        if (App::environment('local')) {
-            if (!Auth::check()) {
-                $user = App\Models\User::first();
-                $user && Auth::login($user);
-            } else {
-                return true;
-            }
-        }
+        // if (App::environment('local')) {
+        //     if (!Auth::check()) {
+        //         $user = App\Models\User::first();
+        //         $user && Auth::login($user);
+        //     } else {
+        //         return true;
+        //     }
+        // }
 
         if (!Auth::check() || !Auth::user()->can('visit_admin')) {
             return false;

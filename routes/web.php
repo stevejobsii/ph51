@@ -129,7 +129,7 @@ Route::group(['before' => 'manage_users'], function () {
 
 Route::post('/upload_image', 'TopicsController@uploadImage')->name('upload_image')->middleware('auth');
 
-// Health Checking
+// mailtest Checking
 Route::get('mailtest', function () {
 Mail::send('emails.welcome', ['key' => 'value'], function($message)
 {
