@@ -20,7 +20,7 @@
                   {!! lang('You need to login to proceed.') !!}
               </div>
               <a class="btn btn-lg btn-primary btn-block" id="login-required-submit" href="{{ URL::route('auth.oauth', ['driver' => 'qq']) }}"><i class="fa fa-qq-alt"></i> <!-- {{lang('Login with GitHub')}} -->QQ登录</a>
-              <a class="btn btn-lg btn-success btn-block" href="{{ URL::route('auth.oauth', ['driver' => 'wechat']) }}"><i class="fa fa-weixin" ></i> {{lang('Login with WeChat')}}</a>
+              <a class="btn btn-lg btn-success btn-block" href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}"><i class="fa fa-weixin" ></i> {{lang('Login with WeChat')}}</a>
             </fieldset>
 
         </form>

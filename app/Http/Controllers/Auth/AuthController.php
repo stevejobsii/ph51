@@ -137,7 +137,7 @@ class AuthController extends Controller implements UserCreatorListener
 
         if ($driver == 'qq') {
         return \Socialite::with('qq')->redirect();}
-        if ($driver == 'wechat') {
+        if ($driver == 'weixin') {
         return \Socialite::with('weixin')->redirect();}
     }
 
