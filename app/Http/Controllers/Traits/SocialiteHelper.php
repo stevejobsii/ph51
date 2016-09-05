@@ -61,7 +61,7 @@ trait SocialiteHelper
         if ($provider == 'qq') {
             $currentUser->qq_id = $oauthUser->id;
            //$currentUser->github_url = $oauthUser->user['url'];
-        } elseif ($provider == 'wechat') {
+        } elseif ($provider == 'weixin') {
             $currentUser->wechat_openid = $oauthUser->id;
             $currentUser->wechat_unionid = $oauthUser->user['unionid'];
         }

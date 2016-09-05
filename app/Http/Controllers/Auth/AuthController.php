@@ -19,11 +19,11 @@ use Jrean\UserVerification\Facades\UserVerification;
 use Jrean\UserVerification\Exceptions\UserNotFoundException;
 use Jrean\UserVerification\Exceptions\UserIsVerifiedException;
 use Jrean\UserVerification\Exceptions\TokenMismatchException;
-use App\Http\Controllers\Traits\SocialiteHelper;
+//use App\Http\Controllers\Traits\SocialiteHelper;
 
 class AuthController extends Controller implements UserCreatorListener
 {
-    use VerifiesUsers,SocialiteHelper;
+    use VerifiesUsers;//SocialiteHelper
 
     /**
      * Create a new authentication controller instance.
@@ -241,6 +241,20 @@ class AuthController extends Controller implements UserCreatorListener
         return redirect(route('user-banned'));
     }
 
+    public function bindSocialiteUser($oauthUser, $provider)
+    {
+        $currentUser = Auth::user();
+
+        if ($provider == 'qq') {
+            $currentUser->qq_id = $oauthUser->id;
+           //$currentUser->github_url = $oauthUser->user['url'];
+        } elseif ($provider == 'weixin') {
+            $currentUser->wechat_openid = $oauthUser->id;
+            $currentUser->wechat_unionid = $oauthUser->user['unionid'];
+        }
+
+        $currentUser->save();
+    }
     /**
      * ----------------------------------------
      * Email Validation邮箱验证
