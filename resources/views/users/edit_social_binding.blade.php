@@ -43,9 +43,9 @@
                       {{ lang('WeChat') }}
                     </a>
 
-                    <a class="btn btn-info login-btn {{ $user->register_source == 'github' ? '' : 'hide' }}" role="button">
-                      <i class="fa fa-github-alt"></i>
-                      {{ lang('GitHub') }}
+                    <a class="btn btn-info login-btn {{ $user->register_source == 'qq' ? '' : 'hide' }}" role="button">
+                      <i class="fa fa-qq"></i>
+                      QQ
                     </a>
 
                     <span class="padding-sm">{{ lang('Not allow to change register binding account') }}</span>
