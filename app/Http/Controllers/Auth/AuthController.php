@@ -181,7 +181,7 @@ class AuthController extends Controller implements UserCreatorListener
         if ($provider == 'qq') {
             $currentUser->qq_id = $oauthUser->id;
            //$currentUser->github_url = $oauthUser->user['url'];
-        } elseif ($provider == 'wechat') {
+        } elseif ($provider == 'weixin') {
             $currentUser->wechat_openid = $oauthUser->id;
             $currentUser->wechat_unionid = $oauthUser->user['unionid'];
         }
@@ -239,21 +239,6 @@ class AuthController extends Controller implements UserCreatorListener
     public function userIsBanned($user)
     {
         return redirect(route('user-banned'));
-    }
-
-    public function bindSocialiteUser($oauthUser, $provider)
-    {
-        $currentUser = Auth::user();
-
-        if ($provider == 'qq') {
-            $currentUser->qq_id = $oauthUser->id;
-           //$currentUser->github_url = $oauthUser->user['url'];
-        } elseif ($provider == 'weixin') {
-            $currentUser->wechat_openid = $oauthUser->id;
-            $currentUser->wechat_unionid = $oauthUser->user['unionid'];
-        }
-
-        $currentUser->save();
     }
     /**
      * ----------------------------------------
