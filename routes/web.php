@@ -129,6 +129,15 @@ Route::group(['before' => 'manage_users'], function () {
 
 Route::post('/upload_image', 'TopicsController@uploadImage')->name('upload_image')->middleware('auth');
 
+// Health Checking
+Route::get('mailtest', function () {
+use Illuminate\Support\Facades\Mail;
+
+Mail::send('mails.welcome', ['key' => 'value'], function($message)
+{
+    $message->to('401789679@qq.com', 'Mora')->subject('Welcome!');
+});
+});
 //github大众不需要 Route::get('/github-api-proxy/users/{username}', 'UsersController@githubApiProxy')->name('users.github-api-proxy');
 // Route::get('/github-card', 'UsersController@githubCard')->name('users.github-card');
 //Laravel Log Viewer
