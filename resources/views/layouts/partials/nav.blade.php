@@ -2,7 +2,7 @@
   <div class="container">
     <div class="navbar-header hidden-xs">
 
-      <a href="/" class="navbar-brand">XXX社区</a>
+      <a href="/" class="navbar-brand">好去处Goodgoto</a>
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
