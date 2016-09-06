@@ -131,7 +131,7 @@ Route::post('/upload_image', 'TopicsController@uploadImage')->name('upload_image
 
 // mailtest Checking
 Route::get('mailtest', function () {
-Mail::send('emails.welcome', ['key' => 'value'], function($message)
+Mail::raw('dsfsfsfs', function($message)
 {
     $message->to('401789679@qq.com', 'Mora')->subject('Welcome!');
 });
