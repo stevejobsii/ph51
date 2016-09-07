@@ -133,7 +133,7 @@ Route::post('/upload_image', 'TopicsController@uploadImage')->name('upload_image
 Route::get('mailtest', function () {
 Mail::raw('dsfsfsfs', function($message)
 {
-    $message->to('401789679@qq.com', 'Mora')->subject('Welcome!');
+    $message->to('XXXXXXX@qq.com', 'Mora')->subject('Welcome!');
 });
 });
 //github大众不需要 Route::get('/github-api-proxy/users/{username}', 'UsersController@githubApiProxy')->name('users.github-api-proxy');

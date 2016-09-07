@@ -11,12 +11,19 @@ class SiteStatus extends Model
     {
         self::collect('new_user');
         switch ($driver) {
-            case 'github':
-                self::collect('new_user_from_github');
+            case 'qq':
+                self::collect('new_user_from_qq');
                 break;
-            case 'wechat':
-                self::collect('new_user_from_wechat');
+            case 'weixin':
+                self::collect('new_user_from_weixin');
                 break;
+
+            // case 'github':
+            //     self::collect('new_user_from_github');
+            //     break;
+            // case 'wechat':
+            //     self::collect('new_user_from_wechat');
+            //     break;
         }
     }
     public static function newTopic()
@@ -66,6 +73,12 @@ class SiteStatus extends Model
             case 'new_user_from_wechat':
                 $todayStatus->wechat_registered_count += 1;
                 break;
+            // case 'new_user_from_qq':
+            //     $todayStatus->qq_regitster_count += 1;
+            //     break;
+            // case 'new_user_from_weixin':
+            //     $todayStatus->weixin_registered_count += 1;
+            //     break;
         }
 
         $todayStatus->save();

@@ -41,8 +41,14 @@ return [
         // 'github_regitster_count' => [
         //     'title'    => 'Github 注册数',
         // ],
-        'wechat_registered_count' => [
-            'title'    => 'WeChat 注册数',
+        // 'wechat_registered_count' => [
+        //     'title'    => 'WeChat 注册数',
+        // ],
+        'qq_registered_count' => [
+            'title'    => 'QQ 注册数',
+        ],
+        'weixin_registered_count' => [
+            'title'    => 'Weixin 注册数',
         ],
         'topic_count' => [
             'title'    => '话题数量',
