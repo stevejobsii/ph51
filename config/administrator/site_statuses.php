@@ -44,10 +44,10 @@ return [
         // 'wechat_registered_count' => [
         //     'title'    => 'WeChat 注册数',
         // ],
-        'qq_registered_count' => [
+        'github_registered_count' => [
             'title'    => 'QQ 注册数',
         ],
-        'weixin_registered_count' => [
+        'wechat_registered_count' => [
             'title'    => 'Weixin 注册数',
         ],
         'topic_count' => [

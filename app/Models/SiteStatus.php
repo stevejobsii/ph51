@@ -12,10 +12,10 @@ class SiteStatus extends Model
         self::collect('new_user');
         switch ($driver) {
             case 'qq':
-                self::collect('new_user_from_qq');
+                self::collect('new_user_from_github');
                 break;
             case 'weixin':
-                self::collect('new_user_from_weixin');
+                self::collect('new_user_from_wechat');
                 break;
 
             // case 'github':
