@@ -12,9 +12,9 @@
 
     <div class="reply-box form box-block">
 
-      <div class="alert alert-warning">
+      <!-- <div class="alert alert-warning">
           {{ lang('be_nice') }}
-      </div>
+      </div> -->
 
       @include('layouts.partials.errors')
 
@@ -66,7 +66,7 @@
     </div>
   </div>
 
-  <div class="col-md-4 side-bar">
+<!--   <div class="col-md-4 side-bar">
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
@@ -96,7 +96,7 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 </div>
 
 @stop
