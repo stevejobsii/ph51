@@ -2,7 +2,9 @@
   <div class="container">
     <div class="navbar-header hidden-xs">
 
-      <a href="/" class="navbar-brand">好去处 Goodgoto</a>
+      <a href="/" class="navbar-brand">
+        <img src="https://goodgoto.com/tougam_logo.png">
+      </a>
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
